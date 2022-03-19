@@ -1,4 +1,4 @@
-const Search = ({ search, setSearch }) => {
+const Search = ({ click, search, setSearch }) => {
 
   const searchChange = (event) => {
     setSearch(event.target.value);
@@ -6,11 +6,10 @@ const Search = ({ search, setSearch }) => {
 
   return(
     <>
-      <p>Search stuff</p>
       <form>
         <label htmlFor='search'>Search Movie </label>
         <input type='text' id='search' onChange={searchChange} value={search}/>
-        <button type='submit'>Search</button>
+        <button type='button' onClick={click} >Search</button>
       </form>
     </>
   )

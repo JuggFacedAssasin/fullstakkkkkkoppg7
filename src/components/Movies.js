@@ -1,20 +1,20 @@
-const Movies = ({ movies, setMovies, search }) => {
-  
-  const key = 'ab2be16c';
+import Movie from "./Movie";
 
-  const url = 'http://www.omdbapi.com/?apikey=ab2be16c&s=';
-  
-  const click = async () => {
-    const response = await fetch(`${url}${search}`);
-    const data = await response.json();
-    console.log(data);
-  }
+const Movies = ({ movies, setMovies, search }) => {
 
   return(
 
+
     <>
-      <p>MovieSSSSSS</p>
-      <button type='button' onClick={click}>CLICK THIS</button>
+      { movies? movies.map((movieDatabase)=>{
+        const {imdbID: id, Title, Year, Type, Poster}=movieDatabase;
+        return 
+        <article>
+          <h2>{ Title }</h2>
+          <p>{ Type }{ Year }</p>
+          <img src={Poster} alt="missingPoster"></img>
+        </article>
+      }) : null }
     </>
   )
 }
