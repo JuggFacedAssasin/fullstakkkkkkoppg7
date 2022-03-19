@@ -6,7 +6,7 @@ const Search = ({ click, search, setSearch }) => {
 
   return(
     <>
-      <form>
+      <form className="form">
         <label htmlFor='search'>Search Movie </label>
         <input type='text' id='search' onChange={searchChange} value={search}/>
         <button type='button' onClick={click} >Search</button>
